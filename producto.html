@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,20 +19,72 @@
 </head>
 <body class="bg-gradient-to-br from-rose-50/70 via-pink-50/40 to-amber-50/30 text-slate-800 flex flex-col min-h-screen">
 
+    <!-- Menú Lateral Plegable (Drawer) -->
+    <div id="side-drawer" class="fixed inset-0 z-50 invisible transition-all duration-300">
+        <div id="drawer-overlay" onclick="toggleMenu()" class="absolute inset-0 bg-slate-950/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+        <aside id="drawer-content" class="absolute top-0 left-0 w-80 max-w-[85vw] h-full bg-white shadow-2xl flex flex-col justify-between -translate-x-full transition-transform duration-300 p-6 z-10">
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-rose-100 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-500 to-pink-400 flex items-center justify-center text-white font-serif-title font-bold text-xl shadow-md">
+                            N
+                        </div>
+                        <div>
+                            <h3 class="font-serif-title font-bold text-base text-slate-900">La Nonna</h3>
+                            <span class="text-[10px] text-rose-500 font-semibold uppercase tracking-wider">Navegación</span>
+                        </div>
+                    </div>
+                    <button onclick="toggleMenu()" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <nav class="space-y-2 text-xs font-semibold uppercase tracking-wider text-slate-600">
+                    <a href="index.html#catalogo" class="flex items-center gap-3 p-3 rounded-xl hover:bg-rose-50 hover:text-rose-600 transition">
+                        <i data-lucide="grid" class="w-4 h-4 text-rose-500"></i> Catálogo Completo
+                    </a>
+                    <a href="index.html#promociones" class="flex items-center gap-3 p-3 rounded-xl hover:bg-rose-50 hover:text-rose-600 transition">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-rose-500"></i> Combos & Ofertas
+                    </a>
+                    <a href="index.html#redes" class="flex items-center gap-3 p-3 rounded-xl hover:bg-rose-50 hover:text-rose-600 transition">
+                        <i data-lucide="video" class="w-4 h-4 text-rose-500"></i> Contenido & Videos
+                    </a>
+                    <a href="index.html#resenas" class="flex items-center gap-3 p-3 rounded-xl hover:bg-rose-50 hover:text-rose-600 transition">
+                        <i data-lucide="star" class="w-4 h-4 text-rose-500"></i> Reseñas de Clientes
+                    </a>
+                </nav>
+            </div>
+
+            <div class="pt-6 border-t border-rose-100 space-y-3">
+                <a href="https://wa.me/584120438829?text=Hola,%20quisiera%20pedir%20encurtidos%20gourmet" target="_blank" class="w-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 text-xs uppercase tracking-wider shadow-md">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Directo
+                </a>
+                <p class="text-[11px] text-center text-slate-400">Venezuela • Delivery & Pick Up</p>
+            </div>
+        </aside>
+    </div>
+
     <!-- Header Navigation -->
     <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-rose-100/60 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3 cursor-pointer group">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rose-500 via-rose-400 to-pink-300 flex items-center justify-center text-white font-serif-title font-bold text-2xl shadow-md shadow-rose-200 group-hover:scale-105 transition">
-                    N
-                </div>
-                <div>
-                    <h1 class="font-serif-title font-bold text-xl leading-none text-slate-900 tracking-wide">La Receta de la Nonna</h1>
-                    <span class="text-[11px] text-rose-500 font-semibold tracking-wider uppercase flex items-center gap-1.5 mt-1">
-                        <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span> Línea Gourmet Artesanal
-                    </span>
-                </div>
-            </a>
+            <div class="flex items-center gap-3">
+                <!-- Botón Menú Plegable Hamburguesa -->
+                <button onclick="toggleMenu()" class="p-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 transition border border-rose-100 flex items-center justify-center">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+
+                <a href="index.html" class="flex items-center gap-3 cursor-pointer group">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rose-500 via-rose-400 to-pink-300 flex items-center justify-center text-white font-serif-title font-bold text-2xl shadow-md shadow-rose-200 group-hover:scale-105 transition">
+                        N
+                    </div>
+                    <div>
+                        <h1 class="font-serif-title font-bold text-xl leading-none text-slate-900 tracking-wide">La Receta de la Nonna</h1>
+                        <span class="text-[11px] text-rose-500 font-semibold tracking-wider uppercase flex items-center gap-1.5 mt-1">
+                            <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span> Línea Gourmet Artesanal
+                        </span>
+                    </div>
+                </a>
+            </div>
 
             <!-- Volver al catálogo -->
             <a href="index.html" class="bg-rose-100/80 hover:bg-rose-200 text-rose-900 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition border border-rose-200">
@@ -44,7 +96,6 @@
 
     <!-- Main Detail Section -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
-        <!-- Breadcrumbs -->
         <nav class="flex items-center gap-2 text-xs text-slate-500 mb-8">
             <a href="index.html" class="hover:text-rose-600 transition">Inicio</a>
             <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
@@ -58,7 +109,6 @@
                 
                 <!-- Columna Izquierda: Galería de Imágenes -->
                 <div class="space-y-4">
-                    <!-- Foto Principal -->
                     <div class="relative h-96 sm:h-[450px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-inner group">
                         <img id="main-image" src="" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80';" alt="Encurtido" class="w-full h-full object-cover transition-all duration-300">
                         <span id="badge-weight" class="absolute top-4 left-4 text-xs font-bold tracking-wider uppercase px-3 py-1.5 bg-white/90 text-rose-700 backdrop-blur-md rounded-full border border-rose-200 shadow-sm">
@@ -66,9 +116,8 @@
                         </span>
                     </div>
 
-                    <!-- 3 Miniaturas -->
                     <div class="grid grid-cols-3 gap-3" id="thumbnails-container">
-                        <!-- Generado por JavaScript -->
+                        <!-- Generado por JS -->
                     </div>
                 </div>
 
@@ -101,7 +150,7 @@
                             </div>
                         </div>
 
-                        <!-- Descripción Breve -->
+                        <!-- Descripción -->
                         <div class="space-y-2">
                             <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Descripción</h4>
                             <p id="product-desc" class="text-sm text-slate-600 leading-relaxed font-light">
@@ -109,7 +158,7 @@
                             </p>
                         </div>
 
-                        <!-- Detalles Técnicos / Ingredientes -->
+                        <!-- Detalles Técnicos -->
                         <div class="grid grid-cols-2 gap-4 pt-2">
                             <div class="p-3.5 bg-rose-50/50 rounded-xl border border-rose-100/80">
                                 <span class="block text-[11px] font-bold text-rose-800 uppercase tracking-wider">Ingredientes</span>
@@ -122,7 +171,7 @@
                         </div>
                     </div>
 
-                    <!-- Selector de Cantidad, Botón de Pedido y Botón de Compartir -->
+                    <!-- Cantidad y Acciones -->
                     <div class="pt-6 border-t border-rose-100 space-y-4">
                         <div class="flex items-center gap-4">
                             <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Cantidad:</span>
@@ -134,13 +183,11 @@
                         </div>
 
                         <div class="space-y-2.5">
-                            <!-- Botón de Pedido Directo -->
                             <button onclick="orderViaWhatsApp()" class="w-full bg-gradient-to-r from-rose-500 via-rose-600 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold py-3.5 rounded-2xl shadow-lg shadow-rose-200 transition duration-300 flex items-center justify-center gap-3 text-xs uppercase tracking-wider">
                                 <i data-lucide="message-circle" class="w-4 h-4"></i>
                                 <span>Pedir este Producto por WhatsApp</span>
                             </button>
 
-                            <!-- Nuevo Botón: Compartir Producto con Amigos -->
                             <button onclick="shareViaWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl shadow-md transition duration-300 flex items-center justify-center gap-3 text-xs uppercase tracking-wider">
                                 <i data-lucide="share-2" class="w-4 h-4"></i>
                                 <span>Compartir Producto por WhatsApp</span>
@@ -161,67 +208,39 @@
         </div>
     </footer>
 
-    <!-- Lógica JavaScript -->
+    <!-- JS -->
     <script>
         let TASA_BCV = 897.53;
         let currentQuantity = 1;
         let selectedProduct = null;
 
-        const productosDB = [
-            {
-                id: 1,
-                name: "Berenjena Encurtida",
-                price: 6.00,
-                desc: "Finas láminas de berenjena ahumada maceradas en aceite de oliva, ajo fresco y orégano silvestre.",
-                ingredients: "Berenjenas frescas, Aceite de oliva, Ajo, Orégano, Vinagre fino.",
-                weight: "Frasco 350g",
-                images: ["Rename2.jpeg", "Rename1.jpeg", "Portada2.jpeg"]
-            },
-            {
-                id: 2,
-                name: "Cebolla Encurtida",
-                price: 5.00,
-                desc: "Cebollas moradas crujientes perfumadas con pimienta dulce, laurel y suave vinagre aromático.",
-                ingredients: "Cebolla morada, Vinagre gourmet, Pimienta en grano, Laurel.",
-                weight: "Frasco 350g",
-                images: ["Rename3.jpeg", "Rename1.jpeg", "Portada2.jpeg"]
-            },
-            {
-                id: 3,
-                name: "Pepinillo Encurtido",
-                price: 5.00,
-                desc: "Rodajas de pepino agridulce con eneldo y especias finas. El toque fresco perfecto para tus hamburguesas.",
-                ingredients: "Pepino fresco, Eneldo, Semillas de mostaza, Vinagre suave.",
-                weight: "Frasco 350g",
-                images: ["Pepinillog.jpeg", "Rename1.jpeg", "Portada3.jpeg"]
-            },
-            {
-                id: 4,
-                name: "Pimentón Encurtido",
-                price: 6.00,
-                desc: "Tiras de pimentón rojo madurado al sol, asados y marinados en aceite de especias seleccionadas.",
-                ingredients: "Pimentón rojo asado, Ajo, Aceite especiado, Vinagre.",
-                weight: "Frasco 350g",
-                images: ["Rename4.jpeg", "Rename1.jpeg", "Portada2.jpeg"]
-            },
-            {
-                id: 5,
-                name: "Tomate Encurtido",
-                price: 5.00,
-                desc: "Tomates perita firmes sazonados con albaca, aceite aromático y un toque sutil de ajo gourmet.",
-                ingredients: "Tomate perita, Albahaca fresca, Ajo, Aceite aromático.",
-                weight: "Frasco 350g",
-                images: ["Rename6.jpeg", "Rename1.jpeg", "Portada3.jpeg"]
-            },
-            {
-                id: 6,
-                name: "Pepino Encurtido",
-                price: 5.00,
-                desc: "Rodajas de pepino agridulce con eneldo y especias finas. El toque fresco perfecto para tus hamburguesas.",
-                ingredients: "Pepino fresco, Eneldo, Especias finas.",
-                weight: "Frasco 350g",
-                images: ["Pepinog.jpeg", "Rename1.jpeg", "Portada2.jpeg"]
+        function toggleMenu() {
+            const drawer = document.getElementById('side-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            const content = document.getElementById('drawer-content');
+
+            if (drawer.classList.contains('invisible')) {
+                drawer.classList.remove('invisible');
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    content.classList.remove('-translate-x-full');
+                }, 10);
+            } else {
+                overlay.classList.add('opacity-0');
+                content.classList.add('-translate-x-full');
+                setTimeout(() => {
+                    drawer.classList.add('invisible');
+                }, 300);
             }
+        }
+
+        const productosDB = [
+            { id: 1, name: "Berenjena Encurtida", price: 6.00, desc: "Finas láminas de berenjena ahumada maceradas en aceite de oliva, ajo fresco y orégano silvestre.", ingredients: "Berenjenas frescas, Aceite de oliva, Ajo, Orégano, Vinagre fino.", weight: "Frasco 350g", images: ["Rename2.jpeg", "Rename1.jpeg", "Portada2.jpeg"] },
+            { id: 2, name: "Cebolla Encurtida", price: 5.00, desc: "Cebollas moradas crujientes perfumadas con pimienta dulce, laurel y suave vinagre aromático.", ingredients: "Cebolla morada, Vinagre gourmet, Pimienta en grano, Laurel.", weight: "Frasco 350g", images: ["Rename3.jpeg", "Rename1.jpeg", "Portada2.jpeg"] },
+            { id: 3, name: "Pepinillo Encurtido", price: 5.00, desc: "Rodajas de pepino agridulce con eneldo y especias finas. El toque fresco perfecto para tus hamburguesas.", ingredients: "Pepino fresco, Eneldo, Semillas de mostaza, Vinagre suave.", weight: "Frasco 350g", images: ["Pepinillog.jpeg", "Rename1.jpeg", "Portada3.jpeg"] },
+            { id: 4, name: "Pimentón Encurtido", price: 6.00, desc: "Tiras de pimentón rojo madurado al sol, asados y marinados en aceite de especias seleccionadas.", ingredients: "Pimentón rojo asado, Ajo, Aceite especiado, Vinagre.", weight: "Frasco 350g", images: ["Rename4.jpeg", "Rename1.jpeg", "Portada2.jpeg"] },
+            { id: 5, name: "Tomate Encurtido", price: 5.00, desc: "Tomates perita firmes sazonados con albaca, aceite aromático y un toque sutil de ajo gourmet.", ingredients: "Tomate perita, Albahaca fresca, Ajo, Aceite aromático.", weight: "Frasco 350g", images: ["Rename6.jpeg", "Rename1.jpeg", "Portada3.jpeg"] },
+            { id: 6, name: "Pepino Encurtido", price: 5.00, desc: "Rodajas de pepino agridulce con eneldo y especias finas. El toque fresco perfecto para tus hamburguesas.", ingredients: "Pepino fresco, Eneldo, Especias finas.", weight: "Frasco 350g", images: ["Pepinog.jpeg", "Rename1.jpeg", "Portada2.jpeg"] }
         ];
 
         async function cargarTasaBCV() {
@@ -301,7 +320,6 @@
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
         }
 
-        // Función para compartir el producto actual por WhatsApp
         function shareViaWhatsApp() {
             const currentUrl = window.location.href;
             const message = `¡Hola! Te recomiendo este delicioso encurtidor artesanal de *La Receta de la Nonna* 🫙✨\n\n` +
