@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts: Cinzel (Títulos) e Inter (Cuerpo) -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,10 +17,10 @@
         .font-serif-title { font-family: 'Cinzel', serif; }
     </style>
 </head>
-<body class="bg-rose-50/30 text-slate-800 flex flex-col min-h-screen">
+<body class="bg-gradient-to-br from-rose-50/70 via-pink-50/40 to-amber-50/30 text-slate-800 flex flex-col min-h-screen">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-rose-100 shadow-sm">
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-rose-100/60 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 cursor-pointer group">
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rose-500 via-rose-400 to-pink-300 flex items-center justify-center text-white font-serif-title font-bold text-2xl shadow-md shadow-rose-200 group-hover:scale-105 transition">
@@ -35,7 +35,7 @@
             </a>
 
             <!-- Volver al catálogo -->
-            <a href="index.html" class="bg-rose-100 hover:bg-rose-200 text-rose-800 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition">
+            <a href="index.html" class="bg-rose-100/80 hover:bg-rose-200 text-rose-900 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition border border-rose-200">
                 <i data-lucide="arrow-left" class="w-4 h-4"></i>
                 <span class="hidden sm:inline">Volver al Catálogo</span>
             </a>
@@ -53,7 +53,7 @@
             <span id="breadcrumb-title" class="text-slate-900 font-semibold">Cargando producto...</span>
         </nav>
 
-        <div id="product-detail-card" class="bg-white rounded-3xl border border-rose-100 shadow-xl overflow-hidden p-6 sm:p-10">
+        <div id="product-detail-card" class="bg-white/90 backdrop-blur-sm rounded-3xl border border-rose-100/80 shadow-xl overflow-hidden p-6 sm:p-10">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
                 
                 <!-- Columna Izquierda: Galería de Imágenes -->
@@ -76,7 +76,7 @@
                 <div class="flex flex-col justify-between space-y-6">
                     <div class="space-y-4">
                         <div class="flex items-center justify-between">
-                            <span class="text-xs font-bold tracking-widest text-rose-500 uppercase bg-rose-50 px-3 py-1 rounded-full border border-rose-100">
+                            <span class="text-xs font-bold tracking-widest text-rose-600 uppercase bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
                                 Receta Artesanal Premium
                             </span>
                             <div class="flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
@@ -90,7 +90,7 @@
                         </h2>
 
                         <!-- Precios y BCV -->
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-1">
+                        <div class="p-4 bg-rose-50/50 rounded-2xl border border-rose-100 space-y-1">
                             <div class="flex items-baseline gap-3">
                                 <span id="price-usd" class="text-3xl font-extrabold text-rose-600">$0.00</span>
                                 <span class="text-xs text-slate-400 font-medium">Ref. USD</span>
@@ -122,21 +122,30 @@
                         </div>
                     </div>
 
-                    <!-- Selector de Cantidad y Botón de Pedido por WhatsApp -->
-                    <div class="pt-6 border-t border-slate-100 space-y-4">
+                    <!-- Selector de Cantidad, Botón de Pedido y Botón de Compartir -->
+                    <div class="pt-6 border-t border-rose-100 space-y-4">
                         <div class="flex items-center gap-4">
                             <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Cantidad:</span>
-                            <div class="flex items-center border border-slate-200 rounded-xl bg-slate-50">
-                                <button onclick="updateQuantity(-1)" class="w-10 h-10 flex items-center justify-center text-slate-600 hover:bg-slate-200 rounded-l-xl transition font-bold">-</button>
+                            <div class="flex items-center border border-rose-200 rounded-xl bg-white">
+                                <button onclick="updateQuantity(-1)" class="w-10 h-10 flex items-center justify-center text-slate-600 hover:bg-rose-100 rounded-l-xl transition font-bold">-</button>
                                 <span id="quantity-count" class="w-12 text-center text-sm font-bold text-slate-900">1</span>
-                                <button onclick="updateQuantity(1)" class="w-10 h-10 flex items-center justify-center text-slate-600 hover:bg-slate-200 rounded-r-xl transition font-bold">+</button>
+                                <button onclick="updateQuantity(1)" class="w-10 h-10 flex items-center justify-center text-slate-600 hover:bg-rose-100 rounded-r-xl transition font-bold">+</button>
                             </div>
                         </div>
 
-                        <button onclick="orderViaWhatsApp()" class="w-full bg-gradient-to-r from-rose-500 via-rose-600 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold py-4 rounded-2xl shadow-lg shadow-rose-200 transition duration-300 flex items-center justify-center gap-3 text-sm uppercase tracking-wider">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i>
-                            <span>Pedir este Producto por WhatsApp</span>
-                        </button>
+                        <div class="space-y-2.5">
+                            <!-- Botón de Pedido Directo -->
+                            <button onclick="orderViaWhatsApp()" class="w-full bg-gradient-to-r from-rose-500 via-rose-600 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold py-3.5 rounded-2xl shadow-lg shadow-rose-200 transition duration-300 flex items-center justify-center gap-3 text-xs uppercase tracking-wider">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Pedir este Producto por WhatsApp</span>
+                            </button>
+
+                            <!-- Nuevo Botón: Compartir Producto con Amigos -->
+                            <button onclick="shareViaWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-2xl shadow-md transition duration-300 flex items-center justify-center gap-3 text-xs uppercase tracking-wider">
+                                <i data-lucide="share-2" class="w-4 h-4"></i>
+                                <span>Compartir Producto por WhatsApp</span>
+                            </button>
+                        </div>
                     </div>
 
                 </div>
@@ -158,7 +167,6 @@
         let currentQuantity = 1;
         let selectedProduct = null;
 
-        // Base de Datos de Productos sincronizada con index.html (IDs 1 al 6)
         const productosDB = [
             {
                 id: 1,
@@ -231,7 +239,6 @@
         async function initPage() {
             await cargarTasaBCV();
             
-            // Leer el ID desde la URL (?id=1)
             const urlParams = new URLSearchParams(window.location.search);
             const productId = parseInt(urlParams.get('id')) || 1;
 
@@ -248,19 +255,16 @@
             document.getElementById('product-ingredients').innerText = selectedProduct.ingredients;
             document.getElementById('badge-weight').innerText = selectedProduct.weight;
             
-            // Precios
             document.getElementById('price-usd').innerText = `$${selectedProduct.price.toFixed(2)}`;
             const bsPrice = selectedProduct.price * TASA_BCV;
             document.getElementById('price-bs').innerText = `${bsPrice.toLocaleString('es-VE', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Bs`;
 
-            // Imagen Principal
             const mainImg = document.getElementById('main-image');
             mainImg.src = selectedProduct.images[0];
 
-            // Renderizar Miniaturas con protección onerror
             const thumbsContainer = document.getElementById('thumbnails-container');
             thumbsContainer.innerHTML = selectedProduct.images.map((imgUrl, index) => `
-                <button onclick="changeMainImage('${imgUrl}', this)" class="thumb-btn h-24 rounded-xl overflow-hidden border-2 ${index === 0 ? 'border-rose-500' : 'border-transparent'} hover:opacity-90 transition">
+                <button onclick="changeMainImage('${imgUrl}', this)" class="thumb-btn h-24 rounded-xl overflow-hidden border-2 ${index === 0 ? 'border-rose-500' : 'border-transparent'} hover:opacity-90 transition shadow-sm">
                     <img src="${imgUrl}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=300&q=80';" class="w-full h-full object-cover" alt="Vista miniatura">
                 </button>
             `).join('');
@@ -295,6 +299,17 @@
 
             const phone = "584120438829";
             window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
+        }
+
+        // Función para compartir el producto actual por WhatsApp
+        function shareViaWhatsApp() {
+            const currentUrl = window.location.href;
+            const message = `¡Hola! Te recomiendo este delicioso encurtidor artesanal de *La Receta de la Nonna* 🫙✨\n\n` +
+                            `*${selectedProduct.name}* ($${selectedProduct.price.toFixed(2)})\n` +
+                            `_${selectedProduct.desc}_\n\n` +
+                            `Puedes ver los detalles y fotos aquí:\n${currentUrl}`;
+
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, "_blank");
         }
 
         window.onload = initPage;
