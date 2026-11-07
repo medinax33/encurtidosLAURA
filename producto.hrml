@@ -60,7 +60,7 @@
                 <div class="space-y-4">
                     <!-- Foto Principal -->
                     <div class="relative h-96 sm:h-[450px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/60 shadow-inner group">
-                        <img id="main-image" src="" alt="Encurtido" class="w-full h-full object-cover transition-all duration-300">
+                        <img id="main-image" src="" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80';" alt="Encurtido" class="w-full h-full object-cover transition-all duration-300">
                         <span id="badge-weight" class="absolute top-4 left-4 text-xs font-bold tracking-wider uppercase px-3 py-1.5 bg-white/90 text-rose-700 backdrop-blur-md rounded-full border border-rose-200 shadow-sm">
                             350g
                         </span>
@@ -113,11 +113,11 @@
                         <div class="grid grid-cols-2 gap-4 pt-2">
                             <div class="p-3.5 bg-rose-50/50 rounded-xl border border-rose-100/80">
                                 <span class="block text-[11px] font-bold text-rose-800 uppercase tracking-wider">Ingredientes</span>
-                                <span id="product-ingredients" class="text-xs text-slate-600 mt-0.5 block">Vegetales, Aceite de Oliva, Ajo, Especias.</span>
+                                <span id="product-ingredients" class="text-xs text-slate-600 mt-0.5 block">Vegetales frescos, Aceite, Especias seleccionadas.</span>
                             </div>
                             <div class="p-3.5 bg-rose-50/50 rounded-xl border border-rose-100/80">
                                 <span class="block text-[11px] font-bold text-rose-800 uppercase tracking-wider">Conservación</span>
-                                <span class="text-xs text-slate-600 mt-0.5 block">Lugar fresco / Mantener refrigerado.</span>
+                                <span class="text-xs text-slate-600 mt-0.5 block">Lugar fresco / Mantener refrigerado tras abrir.</span>
                             </div>
                         </div>
                     </div>
@@ -154,76 +154,65 @@
 
     <!-- Lógica JavaScript -->
     <script>
-        let TASA_BCV = 894.88;
+        let TASA_BCV = 897.53;
         let currentQuantity = 1;
         let selectedProduct = null;
 
-        // Base de Datos de Productos (debe coincidir con la de index.html)
+        // Base de Datos de Productos sincronizada con index.html (IDs 1 al 6)
         const productosDB = [
             {
                 id: 1,
                 name: "Berenjena Encurtida",
                 price: 6.00,
-                desc: "Finas láminas de berenjena ahumada maceradas en aceite de oliva virgen extra, ajo fresco macerado y orégano silvestre.",
+                desc: "Finas láminas de berenjena ahumada maceradas en aceite de oliva, ajo fresco y orégano silvestre.",
                 ingredients: "Berenjenas frescas, Aceite de oliva, Ajo, Orégano, Vinagre fino.",
                 weight: "Frasco 350g",
-                images: [
-                    "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1589135233689-d53be523826f?auto=format&fit=crop&w=800&q=80"
-                ]
+                images: ["Rename2.jpeg", "Rename1.jpeg", "Portada2.jpeg"]
             },
             {
                 id: 2,
                 name: "Cebolla Encurtida",
                 price: 5.00,
-                desc: "Cebollas moradas crujientes perfumadas con pimienta dulce, hojas de laurel seleccionado y suave vinagre aromático.",
+                desc: "Cebollas moradas crujientes perfumadas con pimienta dulce, laurel y suave vinagre aromático.",
                 ingredients: "Cebolla morada, Vinagre gourmet, Pimienta en grano, Laurel.",
                 weight: "Frasco 350g",
-                images: [
-                    "https://images.unsplash.com/photo-1589135233689-d53be523826f?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=800&q=80"
-                ]
+                images: ["Rename3.jpeg", "Rename1.jpeg", "Portada2.jpeg"]
             },
             {
                 id: 3,
-                name: "Pepino Encurtido",
+                name: "Pepinillo Encurtido",
                 price: 5.00,
-                desc: "Rodajas de pepino agridulce maceradas con eneldo y especias finas. El toque crujiente y fresco idóneo.",
+                desc: "Rodajas de pepino agridulce con eneldo y especias finas. El toque fresco perfecto para tus hamburguesas.",
                 ingredients: "Pepino fresco, Eneldo, Semillas de mostaza, Vinagre suave.",
                 weight: "Frasco 350g",
-                images: [
-                    "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
-                ]
+                images: ["Pepinillog.jpeg", "Rename1.jpeg", "Portada3.jpeg"]
             },
             {
                 id: 4,
                 name: "Pimentón Encurtido",
                 price: 6.00,
-                desc: "Tiras de pimentón rojo madurado al sol, asados de forma artesanal y marinados en aceite de especias.",
+                desc: "Tiras de pimentón rojo madurado al sol, asados y marinados en aceite de especias seleccionadas.",
                 ingredients: "Pimentón rojo asado, Ajo, Aceite especiado, Vinagre.",
                 weight: "Frasco 350g",
-                images: [
-                    "https://images.unsplash.com/photo-1563583764092-264f434947c9?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1589135233689-d53be523826f?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80"
-                ]
+                images: ["Rename4.jpeg", "Rename1.jpeg", "Portada2.jpeg"]
             },
             {
                 id: 5,
                 name: "Tomate Encurtido",
                 price: 5.00,
-                desc: "Tomates perita firmes sazonados con albahaca fresca, aceite aromático y un toque sutil de ajo gourmet.",
+                desc: "Tomates perita firmes sazonados con albaca, aceite aromático y un toque sutil de ajo gourmet.",
                 ingredients: "Tomate perita, Albahaca fresca, Ajo, Aceite aromático.",
                 weight: "Frasco 350g",
-                images: [
-                    "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=800&q=80"
-                ]
+                images: ["Rename6.jpeg", "Rename1.jpeg", "Portada3.jpeg"]
+            },
+            {
+                id: 6,
+                name: "Pepino Encurtido",
+                price: 5.00,
+                desc: "Rodajas de pepino agridulce con eneldo y especias finas. El toque fresco perfecto para tus hamburguesas.",
+                ingredients: "Pepino fresco, Eneldo, Especias finas.",
+                weight: "Frasco 350g",
+                images: ["Pepinog.jpeg", "Rename1.jpeg", "Portada2.jpeg"]
             }
         ];
 
@@ -268,11 +257,11 @@
             const mainImg = document.getElementById('main-image');
             mainImg.src = selectedProduct.images[0];
 
-            // Renderizar Miniaturas
+            // Renderizar Miniaturas con protección onerror
             const thumbsContainer = document.getElementById('thumbnails-container');
             thumbsContainer.innerHTML = selectedProduct.images.map((imgUrl, index) => `
                 <button onclick="changeMainImage('${imgUrl}', this)" class="thumb-btn h-24 rounded-xl overflow-hidden border-2 ${index === 0 ? 'border-rose-500' : 'border-transparent'} hover:opacity-90 transition">
-                    <img src="${imgUrl}" class="w-full h-full object-cover" alt="Vista miniatura">
+                    <img src="${imgUrl}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=300&q=80';" class="w-full h-full object-cover" alt="Vista miniatura">
                 </button>
             `).join('');
         }
