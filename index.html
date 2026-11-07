@@ -25,14 +25,9 @@
         <aside id="drawer-content" class="absolute top-0 left-0 w-80 max-w-[85vw] h-full bg-white shadow-2xl flex flex-col justify-between -translate-x-full transition-transform duration-300 p-6 z-10">
             <div class="space-y-6">
                 <div class="flex items-center justify-between border-b border-rose-100 pb-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-500 to-pink-400 flex items-center justify-center text-white font-serif-title font-bold text-xl shadow-md">
-                            N
-                        </div>
-                        <div>
-                            <h3 class="font-serif-title font-bold text-base text-slate-900">La Nonna</h3>
-                            <span class="text-[10px] text-rose-500 font-semibold uppercase tracking-wider">Menú Principal</span>
-                        </div>
+                    <div>
+                        <h3 class="font-serif-title font-bold text-base text-slate-900">La Receta de la Nonna</h3>
+                        <span class="text-[10px] text-rose-500 font-semibold uppercase tracking-wider">Menú Principal</span>
                     </div>
                     <button onclick="toggleMenu()" class="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition">
                         <i data-lucide="x" class="w-5 h-5"></i>
@@ -66,23 +61,18 @@
 
     <!-- Header Navigation -->
     <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-rose-100/60 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
             <div class="flex items-center gap-3">
                 <!-- Botón Menú Plegable Hamburguesa -->
-                <button onclick="toggleMenu()" class="p-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 transition border border-rose-100 flex items-center justify-center">
+                <button onclick="toggleMenu()" class="p-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 transition border border-rose-100 flex items-center justify-center flex-shrink-0">
                     <i data-lucide="menu" class="w-5 h-5"></i>
                 </button>
 
-                <div class="flex items-center gap-3 cursor-pointer">
-                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rose-500 via-rose-400 to-pink-300 flex items-center justify-center text-white font-serif-title font-bold text-2xl shadow-md shadow-rose-200">
-                        N
-                    </div>
-                    <div>
-                        <h1 class="font-serif-title font-bold text-xl leading-none text-slate-900 tracking-wide">La Receta de la Nonna</h1>
-                        <span class="text-[11px] text-rose-500 font-semibold tracking-wider uppercase flex items-center gap-1.5 mt-1">
-                            <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span> Línea Gourmet Artesanal
-                        </span>
-                    </div>
+                <div class="cursor-pointer">
+                    <h1 class="font-serif-title font-bold text-base sm:text-lg leading-tight text-slate-900 tracking-wide">La Receta de la Nonna</h1>
+                    <span class="text-[10px] sm:text-[11px] text-rose-500 font-semibold tracking-wider uppercase flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse flex-shrink-0"></span> Línea Gourmet Artesanal
+                    </span>
                 </div>
             </div>
 
@@ -95,37 +85,38 @@
             </nav>
 
             <!-- Direct Contact Button -->
-            <a href="https://wa.me/584120438829?text=Hola,%20quisiera%20pedir%20encurtidos%20gourmet" target="_blank" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase flex items-center gap-2 shadow-md shadow-rose-200 transition duration-300 transform hover:-translate-y-0.5">
+            <a href="https://wa.me/584120438829?text=Hola,%20quisiera%20pedir%20encurtidos%20gourmet" target="_blank" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-4 sm:px-5 py-2.5 rounded-full text-[11px] sm:text-xs font-bold tracking-wider uppercase flex items-center gap-2 shadow-md shadow-rose-200 transition duration-300 transform hover:-translate-y-0.5 flex-shrink-0">
                 <i data-lucide="message-circle" class="w-4 h-4"></i>
                 <span class="hidden sm:inline">Pedir por WhatsApp</span>
+                <span class="inline sm:hidden">Pedir</span>
             </a>
         </div>
     </header>
 
     <!-- Hero Banner -->
-    <section class="relative bg-slate-950 text-white py-24 sm:py-32 px-4 overflow-hidden">
+    <section class="relative bg-slate-950 text-white py-20 sm:py-32 px-4 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="Fondo1.jpeg" alt="Bienvenida Encurtidos Nonna" class="w-full h-full object-cover object-center filter brightness-90">
             <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/80 to-rose-950/75 backdrop-blur-[2px]"></div>
         </div>
 
         <div class="max-w-4xl mx-auto text-center space-y-5 relative z-10">
-            <span class="bg-white/10 text-pink-200 text-xs font-semibold px-4 py-1.5 rounded-full border border-white/20 inline-block backdrop-blur-md shadow-lg">
+            <span class="bg-white/10 text-pink-200 text-[11px] sm:text-xs font-semibold px-4 py-1.5 rounded-full border border-white/20 inline-block backdrop-blur-md shadow-lg">
                 Atención rápida por WhatsApp • Tasa BCV Al Día • Delivery & Pick Up 
             </span>
-            <h2 class="font-serif-title text-4xl sm:text-6xl italic font-normal tracking-wide text-rose-100 drop-shadow-md">
+            <h2 class="font-serif-title text-3xl sm:text-6xl italic font-normal tracking-wide text-rose-100 drop-shadow-md leading-snug">
                 El toque delicado y gourmet para tus comidas
             </h2>
-            <p class="text-rose-100/90 text-sm sm:text-lg max-w-2xl mx-auto font-light leading-relaxed drop-shadow">
+            <p class="text-rose-100/90 text-xs sm:text-lg max-w-2xl mx-auto font-light leading-relaxed drop-shadow">
                 Vegetales frescos seleccionados a mano, sazonados con recetas de hogar y macerados a la perfección.
-                <span class="block mt-2 font-medium text-pink-300">Pasa el cursor por cada frasco para consultar el precio en Bolívares.</span>
+                <span class="block mt-2 font-medium text-pink-300">Pasa el cursor (o toca) por cada frasco para consultar el precio en Bolívares.</span>
             </p>
-            <div class="pt-4 flex flex-wrap justify-center gap-4">
-                <a href="#catalogo" class="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md transition duration-300 shadow-xl">
+            <div class="pt-4 flex flex-wrap justify-center gap-3">
+                <a href="#catalogo" class="inline-flex items-center gap-2 bg-rose-500 hover:bg-rose-600 text-white px-5 sm:px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md transition duration-300 shadow-xl">
                     <span>Ver Catálogo</span>
                     <i data-lucide="arrow-down" class="w-4 h-4"></i>
                 </a>
-                <a href="#promociones" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md border border-white/30 transition duration-300">
+                <a href="#promociones" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 sm:px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest backdrop-blur-md border border-white/30 transition duration-300">
                     <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
                     <span>Ver Promociones</span>
                 </a>
@@ -134,10 +125,10 @@
     </section>
 
     <!-- Section: 3 Highlight Photos -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-10 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-rose-100/80 shadow-xl shadow-rose-950/5 group">
-                <div class="h-64 overflow-hidden relative">
+                <div class="h-56 sm:h-64 overflow-hidden relative">
                     <img src="Rename1.jpeg" alt="Selección Artesanal" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
                     <span class="absolute bottom-3 left-3 text-white text-[11px] font-bold tracking-wider uppercase px-3 py-1 bg-white/20 backdrop-blur-md rounded-full border border-white/30">Selección Artesanal</span>
@@ -149,7 +140,7 @@
             </div>
 
             <div class="bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-rose-100/80 shadow-xl shadow-rose-950/5 group">
-                <div class="h-64 overflow-hidden relative">
+                <div class="h-56 sm:h-64 overflow-hidden relative">
                     <img src="Portada2.jpeg" alt="Macerado Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
                     <span class="absolute bottom-3 left-3 text-white text-[11px] font-bold tracking-wider uppercase px-3 py-1 bg-white/20 backdrop-blur-md rounded-full border border-white/30">Macerado Especial</span>
@@ -161,7 +152,7 @@
             </div>
 
             <div class="bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-rose-100/80 shadow-xl shadow-rose-950/5 group">
-                <div class="h-64 overflow-hidden relative">
+                <div class="h-56 sm:h-64 overflow-hidden relative">
                     <img src="Portada3.jpeg" alt="Calidad Gourmet" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
                     <span class="absolute bottom-3 left-3 text-white text-[11px] font-bold tracking-wider uppercase px-3 py-1 bg-white/20 backdrop-blur-md rounded-full border border-white/30">Calidad Gourmet</span>
@@ -174,14 +165,14 @@
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: Banner & Promociones Especiales -->
-    <section id="promociones" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div class="relative bg-gradient-to-r from-rose-900 via-slate-900 to-slate-950 rounded-3xl overflow-hidden shadow-2xl border border-rose-500/20 p-8 sm:p-12">
+    <!-- SECCIÓN: Banner & Promociones Especiales -->
+    <section id="promociones" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div class="relative bg-gradient-to-r from-rose-900 via-slate-900 to-slate-950 rounded-3xl overflow-hidden shadow-2xl border border-rose-500/20 p-6 sm:p-12">
             <div class="relative z-10 max-w-3xl space-y-4">
-                <span class="bg-rose-500/20 text-rose-300 text-xs font-bold px-4 py-1.5 rounded-full border border-rose-500/30 uppercase tracking-widest inline-flex items-center gap-2">
+                <span class="bg-rose-500/20 text-rose-300 text-[11px] sm:text-xs font-bold px-4 py-1.5 rounded-full border border-rose-500/30 uppercase tracking-widest inline-flex items-center gap-2">
                     <i data-lucide="percent" class="w-3.5 h-3.5"></i> Ofertas Especiales de la Semana
                 </span>
-                <h3 class="font-serif-title text-3xl sm:text-5xl font-bold text-white leading-tight">
+                <h3 class="font-serif-title text-2xl sm:text-5xl font-bold text-white leading-tight">
                     Packs Gourmet con Descuento Especial
                 </h3>
                 <p class="text-slate-300 text-xs sm:text-sm font-light leading-relaxed">
@@ -190,7 +181,7 @@
             </div>
 
             <!-- Grilla de Promociones -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 sm:mt-10 relative z-10">
                 <!-- Promo 1 -->
                 <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/15 hover:border-rose-400 transition group space-y-4">
                     <div class="flex items-center justify-between">
@@ -259,12 +250,12 @@
         </div>
 
         <!-- Catalog Grid -->
-        <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-8">
+        <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pb-8">
             <!-- Dynamic Products Generated by JavaScript -->
         </div>
     </main>
 
-    <!-- NUEVA SECCIÓN: Difusión en Redes Sociales (TikTok & Instagram) -->
+    <!-- SECCIÓN: Difusión en Redes Sociales (TikTok & Instagram) -->
     <section id="redes" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-rose-200/60">
         <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
             <span class="text-xs font-bold uppercase tracking-widest text-rose-600 bg-rose-100/80 px-4 py-1.5 rounded-full border border-rose-200">
@@ -339,7 +330,7 @@
         </div>
     </section>
 
-    <!-- NUEVA SECCIÓN: Reseñas & Recomendaciones de Clientes -->
+    <!-- SECCIÓN: Reseñas & Recomendaciones de Clientes -->
     <section id="resenas" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-rose-200/60">
         <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
             <span class="text-xs font-bold uppercase tracking-widest text-rose-600 bg-rose-100/80 px-4 py-1.5 rounded-full border border-rose-200">
@@ -484,7 +475,6 @@
     <script>
         let TASA_BCV = 897.53;
 
-        // Abrir/Cerrar Menú Lateral
         function toggleMenu() {
             const drawer = document.getElementById('side-drawer');
             const overlay = document.getElementById('drawer-overlay');
@@ -541,7 +531,7 @@
                      class="product-card bg-white/90 backdrop-blur-sm rounded-3xl border border-rose-100/80 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-xl hover:border-rose-300 transition duration-300 group"
                      data-usd="${p.price}">
                     <div>
-                        <a href="producto.html?id=${p.id}" class="block h-56 overflow-hidden relative">
+                        <a href="producto.html?id=${p.id}" class="block h-52 sm:h-56 overflow-hidden relative">
                             <img src="${p.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80';" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
                             <span class="absolute top-3 right-3 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 bg-white/90 text-rose-700 backdrop-blur-md rounded-full border border-rose-200/50 shadow-sm">
@@ -549,24 +539,24 @@
                             </span>
                         </a>
 
-                        <div class="p-6">
+                        <div class="p-5 sm:p-6">
                             <a href="producto.html?id=${p.id}">
-                                <h3 class="font-serif-title font-bold text-xl text-slate-900 group-hover:text-rose-600 transition">${p.name}</h3>
+                                <h3 class="font-serif-title font-bold text-lg sm:text-xl text-slate-900 group-hover:text-rose-600 transition">${p.name}</h3>
                             </a>
                             <p class="text-xs text-slate-500 mt-2 leading-relaxed font-light">${p.desc}</p>
                             
-                            <div class="mt-5 select-none inline-block price-wrapper cursor-pointer">
-                                <p class="text-2xl font-extrabold text-rose-500 price-text transition-colors">$${p.price.toFixed(2)}</p>
+                            <div class="mt-4 sm:mt-5 select-none inline-block price-wrapper cursor-pointer">
+                                <p class="text-xl sm:text-2xl font-extrabold text-rose-500 price-text transition-colors">$${p.price.toFixed(2)}</p>
                                 <span class="text-[10px] text-slate-400 block -mt-0.5 font-medium price-sub">Tasa BCV (Pasa el cursor)</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="px-6 pb-6 pt-0 space-y-2">
+                    <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 space-y-2">
                         <a href="producto.html?id=${p.id}" class="w-full bg-rose-50/80 hover:bg-rose-100 text-rose-900 font-semibold py-2.5 rounded-2xl transition duration-300 flex items-center justify-center gap-2 text-xs uppercase tracking-wider border border-rose-100">
                             <i data-lucide="eye" class="w-4 h-4"></i> Ver Detalles y Fotos
                         </a>
-                        <button onclick="orderProduct('${p.name}', ${p.price})" class="w-full bg-slate-900 hover:bg-gradient-to-r hover:from-rose-500 hover:to-pink-500 text-white font-semibold py-3 rounded-2xl transition duration-300 flex items-center justify-center gap-2 text-xs uppercase tracking-wider shadow-md">
+                        <button onclick="orderProduct('${p.name}', ${p.price})" class="w-full bg-slate-900 hover:bg-gradient-to-r hover:from-rose-500 hover:to-pink-500 text-white font-semibold py-2.5 sm:py-3 rounded-2xl transition duration-300 flex items-center justify-center gap-2 text-xs uppercase tracking-wider shadow-md">
                             <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir por WhatsApp
                         </button>
                     </div>
