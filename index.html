@@ -17,10 +17,10 @@
         .font-serif-title { font-family: 'Cinzel', serif; }
     </style>
 </head>
-<body class="bg-rose-50/30 text-slate-800 flex flex-col min-h-screen">
+<body class="bg-gradient-to-br from-rose-50/70 via-pink-50/40 to-amber-50/30 text-slate-800 flex flex-col min-h-screen">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-rose-100 shadow-sm">
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-rose-100/60 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3 cursor-pointer">
                 <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rose-500 via-rose-400 to-pink-300 flex items-center justify-center text-white font-serif-title font-bold text-2xl shadow-md shadow-rose-200">
@@ -73,7 +73,7 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Photo 1 -->
-            <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-xl shadow-rose-900/5 group">
+            <div class="bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-rose-100/80 shadow-xl shadow-rose-950/5 group">
                 <div class="h-64 overflow-hidden relative">
                     <img src="Rename1.jpeg" alt="Selección Artesanal" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
@@ -86,7 +86,7 @@
             </div>
 
             <!-- Photo 2 -->
-            <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-xl shadow-rose-900/5 group">
+            <div class="bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-rose-100/80 shadow-xl shadow-rose-950/5 group">
                 <div class="h-64 overflow-hidden relative">
                     <img src="Portada2.jpeg" alt="Macerado Especial" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
@@ -99,7 +99,7 @@
             </div>
 
             <!-- Photo 3 -->
-            <div class="bg-white rounded-3xl overflow-hidden border border-rose-100 shadow-xl shadow-rose-900/5 group">
+            <div class="bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-rose-100/80 shadow-xl shadow-rose-950/5 group">
                 <div class="h-64 overflow-hidden relative">
                     <img src="Portada3.jpeg" alt="Calidad Gourmet" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
@@ -115,13 +115,13 @@
 
     <!-- Main Content -->
     <main id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full space-y-8">
-        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-rose-100 pb-5 gap-4">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-rose-200/60 pb-5 gap-4">
             <div>
                 <h3 class="font-serif-title text-2xl font-bold text-slate-900">Catálogo de Encurtidos</h3>
                 <p class="text-xs text-slate-500 mt-0.5">Ordenados alfabéticamente para tu comodidad. Haz clic en cualquier producto para ver sus detalles y fotos.</p>
             </div>
             <!-- Live Exchange Badge -->
-            <div class="bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2 shadow-sm">
+            <div class="bg-white/80 backdrop-blur-sm border border-rose-200 text-rose-800 text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2 shadow-sm">
                 <i data-lucide="refresh-cw" class="w-3.5 h-3.5 animate-spin text-rose-500"></i>
                 <span>Tasa BCV sincronizada en vivo</span>
             </div>
@@ -206,7 +206,6 @@
             }
         }
 
-        // Catálogo de Encurtidos con sus IDs únicos y tus imágenes configuradas
         const encurtidos = [
             {
                 id: 1,
@@ -270,10 +269,9 @@
             
             container.innerHTML = encurtidos.map((p, index) => `
                 <div id="product-card-${p.id}-${index}" 
-                     class="product-card bg-white rounded-3xl border border-rose-100 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-xl hover:border-rose-300 transition duration-300 group"
+                     class="product-card bg-white/90 backdrop-blur-sm rounded-3xl border border-rose-100/80 overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-xl hover:border-rose-300 transition duration-300 group"
                      data-usd="${p.price}">
                     <div>
-                        <!-- Enlace a la página de detalles -->
                         <a href="producto.html?id=${p.id}" class="block h-56 overflow-hidden relative">
                             <img src="${p.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=600&q=80';" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
@@ -283,7 +281,6 @@
                         </a>
 
                         <div class="p-6">
-                            <!-- Enlace en el título -->
                             <a href="producto.html?id=${p.id}">
                                 <h3 class="font-serif-title font-bold text-xl text-slate-900 group-hover:text-rose-600 transition">${p.name}</h3>
                             </a>
@@ -297,11 +294,9 @@
                     </div>
 
                     <div class="px-6 pb-6 pt-0 space-y-2">
-                        <!-- Botón para ver detalles -->
-                        <a href="producto.html?id=${p.id}" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-2.5 rounded-2xl transition duration-300 flex items-center justify-center gap-2 text-xs uppercase tracking-wider">
+                        <a href="producto.html?id=${p.id}" class="w-full bg-rose-50/80 hover:bg-rose-100 text-rose-900 font-semibold py-2.5 rounded-2xl transition duration-300 flex items-center justify-center gap-2 text-xs uppercase tracking-wider border border-rose-100">
                             <i data-lucide="eye" class="w-4 h-4"></i> Ver Detalles y Fotos
                         </a>
-                        <!-- Botón para pedir directo por WhatsApp -->
                         <button onclick="orderProduct('${p.name}', ${p.price})" class="w-full bg-slate-900 hover:bg-gradient-to-r hover:from-rose-500 hover:to-pink-500 text-white font-semibold py-3 rounded-2xl transition duration-300 flex items-center justify-center gap-2 text-xs uppercase tracking-wider shadow-md">
                             <i data-lucide="message-circle" class="w-4 h-4"></i> Pedir por WhatsApp
                         </button>
